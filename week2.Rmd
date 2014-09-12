@@ -66,7 +66,7 @@ plot(fit)
 ## Some more playing around
 
 1. Simulate some data
-```{r simulatedata, echo=TRUE}
+```{r simulatedata, echo=TRUE, cache=TRUE}
 x <- rnorm(100); y <- x + rnorm(100, sd = 0.5)
 ```
 
