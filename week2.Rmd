@@ -31,18 +31,30 @@ plot(airquality)
 
 Add up a regression model of ozone on wind, solar radiation and temperature
 
-```{r}
+```{r fitmodel}
 library(stats)
 
 fit <- lm(Ozone ~ Wind + Solar.R + Temp, data = airquality)
 summary(fit)
 ```
 
-And plot it
+Here's a table of regression coefficients.
+
+```{r showtable, results="asis"}
+library(xtable)
+
+xt <- xtable(summary(fit))
+print(xt, type = "html")
+```
+
+
+And here's a plot for it
 
 ```{r}
 plot(fit)
 ```
+
+
 
 
 ## Some more playing around
