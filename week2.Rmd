@@ -3,6 +3,12 @@ output: html_document
 ---
 Week 2 of Reproducible Research
 ===============================
+
+```{r setoptions, echo=FALSE}
+library(knitr)
+opts_chunk$set(echo = FALSE, results = "hide")
+```
+
 ```{r computetime, echo=FALSE}
 time <- format(Sys.time(), "%A, %d %B %Y, %X", usetz = TRUE)
 ```
@@ -18,7 +24,7 @@ library(datasets)
 ```
 
 Then load a dataset of airquality out of there and print out a summary
-```{r}
+```{r echo=TRUE}
 data(airquality)
 summary(airquality)
 ```
