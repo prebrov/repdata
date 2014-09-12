@@ -1,0 +1,59 @@
+---
+output: html_document
+---
+Week 2 of Reproducible Research
+===============================
+```{r computetime, echo=FALSE}
+time <- format(Sys.time(), "%A, %d %B %Y, %X", usetz = TRUE)
+```
+
+Generated at `r time`
+
+Let's play with some R Markdown, shan't we.
+
+First, we load the dataset library that comes with R.
+
+```{r results = "hide"}
+library(datasets)
+```
+
+Then load a dataset of airquality out of there and print out a summary
+```{r}
+data(airquality)
+summary(airquality)
+```
+
+And now we'll plot some of that data
+
+```{r plotAirquality, echo = FALSE}
+plot(airquality)
+```
+
+Add up a regression model of ozone on wind, solar radiation and temperature
+
+```{r}
+library(stats)
+
+fit <- lm(Ozone ~ Wind + Solar.R + Temp, data = airquality)
+summary(fit)
+```
+
+And plot it
+
+```{r}
+plot(fit)
+```
+
+
+## Some more playing around
+
+1. Simulate some data
+```{r simulatedata, echo=TRUE}
+x <- rnorm(100); y <- x + rnorm(100, sd = 0.5)
+```
+
+2. Plot a scatterplot for it
+```{r scatterplot, fig.height=4}
+par(mar = c(5, 4, 1, 1), las = 1)
+plot(x, y, main = "Simulated Data")
+```
